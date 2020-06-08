@@ -6,7 +6,7 @@ import random
 import linecache
 from scipy.interpolate import interpolate
 import numpy as np
-
+import openpyxl
 
 # 读取excel文件内容
 def read_xlrd(excel_File):
@@ -21,7 +21,6 @@ def read_xlrd(excel_File):
                 station = rowVale[colNum]
         stations[num] = station
 
-
 # 保存信息函数
 def text_save(filename, data):  # filename为写入CSV文件的路径，data为要写入数据列表.
     file = open(filename, 'a')
@@ -32,12 +31,20 @@ def text_save(filename, data):  # filename为写入CSV文件的路径，data为�
     file.close()
     print(filename + "文件保存成功!")
 
-
 # 删除信息函数
 def delete_info(file_name):
-    f = open(file_name, 'r+')
-    f.truncate()
+    file = open(file_name, 'r+')
+    file.truncate()
 
+#  将数据写入新文件，写入column列
+def data_write(file_path, data, sheet_name, start_row, start_column):
+    wb = openpyxl.load_workbook(file_path)
+    ws = wb[sheet_name]
+    for element in data:
+        c = ws.cell(column=start_column, row=start_row)
+        c.value = element
+        start_row += 1
+    wb.save(file_path)
 
 # 结构检测函数，检测网络结构函数，网络大小，联通性，最大子图，调用函数绘制网络
 def test_network(graph, filename):
@@ -50,7 +57,6 @@ def test_network(graph, filename):
     nx.draw_networkx(graph)
     plt.show()
 
-
 # 求站点度ki/k_max
 def get_per_degree(i):
     # 平均度的列表
@@ -58,7 +64,6 @@ def get_per_degree(i):
     for ki in node_degree:
         aver_degree.append(ki / k_max)
     return aver_degree[i - 1]
-
 
 # 求Bi/B_max
 def get_per_betweenness(i):
@@ -72,7 +77,6 @@ def get_per_betweenness(i):
         aver_shortest_path.append(x / B_max)
     return aver_shortest_path[i - 1]
 
-
 # 站点容量的初始化,节点i,参数是容忍系数a和权重系数w
 def init_station_capacity(a, w):
     capacity = []
@@ -81,7 +85,6 @@ def init_station_capacity(a, w):
         b = get_per_betweenness(i)
         capacity.append((1 + a) * (w * q + (1 - w) * b))
     return capacity
-
 
 # 初始化站点负载模拟
 def init_station_load(a, w):
@@ -92,10 +95,9 @@ def init_station_load(a, w):
         aver_station_load.append((w * q + (1 - w) * b))
     return aver_station_load
 
-
 # 模拟失效节点函数
 def random_attack(graph, degree):
-    msg = input("请输入失效模型：0-停止模拟，1-随机失效，2-最大度失效，3-最大介数站点失效，4-最大负载站点失效\n")
+    msg = input("请输入失效模型：0-停止模拟，1-随机失效，2-最大度失效，3-最大介数站点失效，4-新街口站点失效\n")
     if msg == '1':
         return random.randint(1, graph.number_of_nodes())
     elif msg == '2':
@@ -105,10 +107,9 @@ def random_attack(graph, degree):
         b_max = max(score.values())
         return list(score.keys())[list(score.values()).index(b_max)]
     elif msg == '4':
-        return int(degree.index(max(degree)) + 1)
+        return int(8)
     elif msg == '0':
         return 0
-
 
 # 归一化处理函数
 def normalization(list_argument):
@@ -157,7 +158,6 @@ def get_graph_info(graph, components_list, live_list):
     print("当前图中未失效节点数为: " + str(live_num))
     live_list.append(live_num)
 
-
 # 级联失效主函数
 def cascading_failure_node(graph, capacity_file, load_file, failure_node_number):
     # 存入load和capacity字典
@@ -196,7 +196,7 @@ def cascading_failure_node(graph, capacity_file, load_file, failure_node_number)
 if __name__ == '__main__':
     stations = {}  # 用来存放序号和站名的字典
     # 读取地铁网络信息
-    excelFile = 'D:/UniCourse/Srt/ToDo/week1_todo/allsubway.xlsx'
+    excelFile = 'D:/UniCourse/Srt/code/Network-cascade/data/allsubway.xlsx'
     read_xlrd(excel_File=excelFile)
     # 建图G
     G = nx.Graph()
@@ -223,13 +223,16 @@ if __name__ == '__main__':
     text_save('load.txt', init_station_load(float(argument_a), float(argument_w)))
     test_network(G, 'G.txt')
 
+    first_fail_node = random_attack(G, node_degree)
     largest_components_list = [stations_nums]
     not_fail_nodes = [stations_nums]
-    cascading_failure_node(G, 'capacity.txt', 'load.txt', 16)
+    cascading_failure_node(G, 'capacity.txt', 'load.txt', first_fail_node)
 
     print("当前剩余节点: ")
     print(G.nodes())
+    print("未失效节点数：")
     print(not_fail_nodes)
+    print("最大联通子图节点数：")
     print(largest_components_list)
 
     with open('data.txt', 'a+') as f:
@@ -257,6 +260,15 @@ if __name__ == '__main__':
     plt.legend()
     plt.show()
 
+    # 删除当前参数下的load capacity信息
     delete_info('capacity.txt')
     delete_info('load.txt')
     delete_info('G.txt')
+    # 写入excel文件
+    # not_fail_excel = [3, 7]
+    # largest_components_excel = [3, 8]
+    # data_write('data/（1）w=0.5随a变化的结果.xlsx', not_fail_nodes, 'a=1.0,w=0.5',
+    #            not_fail_excel[0], not_fail_excel[1])
+    # data_write('data/（1）w=0.5随a变化的结果.xlsx', largest_components_list, 'a=1.0,w=0.5',
+    #            largest_components_excel[0], largest_components_excel[1])
+
