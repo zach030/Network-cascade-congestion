@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="375a8c04-6195-4cd9-a98b-beaca23b6f9c" name="Default Changelist" comment="" />
+    <list default="true" id="375a8c04-6195-4cd9-a98b-beaca23b6f9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/（1）w=0.5随a变化的结果.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/（2）不同a下随 W变化的网络最终结果.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image.rar" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +37,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1anY6qw0950n3QDxkwnHlIvzuma" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,7 +47,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/image" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -121,6 +135,13 @@
       <workItem from="1589332326348" duration="259000" />
       <workItem from="1589332725293" duration="388000" />
       <workItem from="1589333723406" duration="5746000" />
+      <workItem from="1590565211484" duration="2283000" />
+      <workItem from="1590652352377" duration="6313000" />
+      <workItem from="1590761513218" duration="13000" />
+      <workItem from="1591278511025" duration="4648000" />
+      <workItem from="1591326533940" duration="11000" />
+      <workItem from="1591532984486" duration="7897000" />
+      <workItem from="1591576370450" duration="568000" />
     </task>
     <servers />
   </component>
@@ -132,6 +153,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1587372681360" />
+    <state x="93" y="93" width="1095" height="504" key="DiffContextDialog" timestamp="1591285183812">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="93" y="93" width="1095" height="504" key="DiffContextDialog/0.0.1280.689@0.0.1280.689" timestamp="1591285183812" />
     <state x="371" y="43" key="FileChooserDialogImpl" timestamp="1589289784937">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -140,22 +165,22 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="198" y="162" key="FileDocumentManager.FileCacheConflict/0.0.1280.689@0.0.1280.689" timestamp="1589284947810" />
-    <state width="1227" height="360" key="GridCell.Tab.0.bottom" timestamp="1589341464698">
+    <state width="1227" height="294" key="GridCell.Tab.0.bottom" timestamp="1591576867565">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1227" height="360" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1589341464698" />
-    <state width="1227" height="360" key="GridCell.Tab.0.center" timestamp="1589341464698">
+    <state width="1227" height="294" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1591576867565" />
+    <state width="1227" height="294" key="GridCell.Tab.0.center" timestamp="1591576867565">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1227" height="360" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1589341464698" />
-    <state width="1227" height="360" key="GridCell.Tab.0.left" timestamp="1589341464698">
+    <state width="1227" height="294" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1591576867565" />
+    <state width="1227" height="294" key="GridCell.Tab.0.left" timestamp="1591576867564">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1227" height="360" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1589341464698" />
-    <state width="1227" height="360" key="GridCell.Tab.0.right" timestamp="1589341464698">
+    <state width="1227" height="294" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1591576867564" />
+    <state width="1227" height="294" key="GridCell.Tab.0.right" timestamp="1591576867565">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1227" height="360" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1589341464698" />
+    <state width="1227" height="294" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1591576867565" />
     <state width="1227" height="285" key="GridCell.Tab.1.bottom" timestamp="1588790101119">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -172,10 +197,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1227" height="285" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1588790101119" />
-    <state x="26" y="0" key="SettingsEditor" timestamp="1588814851503">
+    <state x="26" y="0" key="SettingsEditor" timestamp="1590652394274">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="26" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1588814851503" />
+    <state x="26" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1590652394274" />
     <state x="86" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587723073480">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -187,5 +212,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/code$demo.coverage" NAME="demo Coverage Results" MODIFIED="1589341339911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Network_cascade_congestion_modeling_and_optimization_platform_design$demo.coverage" NAME="demo Coverage Results" MODIFIED="1591284934887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Network_cascade$demo.coverage" NAME="demo Coverage Results" MODIFIED="1591576788281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
